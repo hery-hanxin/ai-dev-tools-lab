@@ -1,0 +1,5 @@
+name,age,city,is_student,salary
+Alice,25,New York,false,50000.5
+Bob,30,,true,
+Charlie,35,London,false,75000
+Diana,28,Paris,true,45000.0
