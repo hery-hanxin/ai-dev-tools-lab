@@ -99,3 +99,18 @@
 ---
 
 **总结**: Day 6成功实现了从"使用AI"到"设计AI工作方式"的关键转变。通过构建系统化的提示词模板，我们不仅获得了高质量的代码输出，更重要的是掌握了一套可重复、可扩展的AI协作方法论。这是在AI时代的核心竞争力之一。
+
+## ⚙️ 模板自动化使用
+
+- 列出模板: `python prompt_cli.py --list`
+- 交互式选择: `python prompt_cli.py --interactive`
+- 直接构建一次性提示词:
+  - `python prompt_cli.py -t 3 -d "parse logs and summarize errors"`
+- 组合多个模板并保存到文件:
+  - `python prompt_cli.py -t 2 -t 4 -d "parse logs and summarize errors" -o prompt.md`
+- 追加到已有文件: `python prompt_cli.py -t 5 --append -o prompt.md`
+
+说明:
+- 模板位于当前目录，按 `template*.md` 自动发现。
+- 工具会提取每个模板中第一段英文代码块（``` 包围部分）并替换其中的 `[your task description here]`/`[此处描述你的任务]` 占位符。
+- 无占位符的模板（如架构师终极模板）会原样输出，也可与其他模板组合使用。
